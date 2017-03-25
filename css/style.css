@@ -146,7 +146,7 @@ h1 {
         background-position: center center;
         background-image: url(../img/o.svg);
         background-size: 60%;
-        transform: scale(1.1);
+        transform: scale(1.05);
         transition: ease-in, 600ms;
     }
 
