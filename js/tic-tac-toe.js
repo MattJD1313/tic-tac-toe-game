@@ -52,8 +52,7 @@ the start page vanishes and the board page loads.
     }());
 
     //Tracking turns.
-    (function () {
-        boxes.addEventListener('click', () => {
+    const trackingTurns = (function () {
             if (playerOne.className != 'players active') {
                 playerTwo.className = 'players';
                 playerOne.className = 'players active';
@@ -61,15 +60,18 @@ the start page vanishes and the board page loads.
                 playerOne.className = 'players';
                 playerTwo.className = 'players active';
             }
-        });
-    }());
+    });
 
     //Select Squares.
     const selectSquare = (function () {
-        if(playerOne.className == 'players active'){
-            return this.className = 'box box-filled-1';
-        }else{
-            return this.className = 'box box-filled-2';
+        if(this.className != 'box box-filled-1' && this.className != 'box box-filled-2') {
+            if (playerOne.className == 'players active') {
+                this.className = 'box box-filled-1';
+                trackingTurns();
+            } else {
+                this.className = 'box box-filled-2';
+                trackingTurns();
+            }
         }
     });
 
