@@ -1,5 +1,3 @@
-//Single global module that all other modules are ported to.
-const mainScope = (function () {}());
 
 /*
 Creates the start page html and sets it to the opening screen
@@ -31,7 +29,8 @@ the start page vanishes and the board page loads.
     });
     button.addEventListener('click',startGame);
 
-}(mainScope));
+}());
+
 
 /*
  Initialize game for player one to be first to choose and then tracking
@@ -39,7 +38,6 @@ the start page vanishes and the board page loads.
  squares shows the current player's icon and when clicked that icon can be
  entered onto the board and then it is the other player's turn.
  */
-
 (function () {
     //Declaring variables.
     const playerOne = document.getElementById('player1');
@@ -102,7 +100,7 @@ the start page vanishes and the board page loads.
         }
     }());
 
-}(mainScope));
+}());
 
 
 /*
@@ -177,4 +175,4 @@ appropriate winner html is displayed.
             }
         }());
     });
-}(mainScope));
+}());
